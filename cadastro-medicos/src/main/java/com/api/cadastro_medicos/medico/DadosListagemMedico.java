@@ -1,9 +1,11 @@
 package com.api.cadastro_medicos.medico;
 
-public record DadosListagemMedico(String nome, String email, String crm, Especialidade especialidade) {
+public record DadosListagemMedico(Long id, String nome, String telefone, String email, String crm,
+                                  Especialidade especialidade) {
 
     public DadosListagemMedico(Medico medico){
-        this(medico.getNome(), medico.getEmail(), medico.getCrm(), medico.getEspecialidade());
+        this(medico.getId(), medico.getNome(), medico.getTelefone(), medico.getEmail(), medico.getCrm(),
+                medico.getEspecialidade());
     }
 
 }

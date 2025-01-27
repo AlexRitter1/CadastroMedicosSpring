@@ -1,6 +1,5 @@
 package com.api.cadastro_medicos.medico;
 
-import com.api.cadastro_medicos.endereco.DadosEndereco;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -23,8 +22,4 @@ public record DadosCadastroMedico(
         String crm,
 
         @NotNull
-        Especialidade especialidade,
-
-        @NotNull
-        @Valid
-        DadosEndereco dadosEndereco) {}
+        Especialidade especialidade) {}

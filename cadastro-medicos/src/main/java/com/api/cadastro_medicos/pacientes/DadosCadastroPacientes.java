@@ -1,6 +1,5 @@
 package com.api.cadastro_medicos.pacientes;
 
-import com.api.cadastro_medicos.endereco.DadosEndereco;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

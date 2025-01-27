@@ -1,8 +1,7 @@
 package com.api.cadastro_medicos.medico;
 
-import com.api.cadastro_medicos.endereco.DadosEndereco;
-import com.api.cadastro_medicos.endereco.Endereco;
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -30,16 +29,15 @@ public class Medico {
     @Enumerated(EnumType.STRING)
     private Especialidade especialidade;
 
-    @Embedded //classe embutida
-    private Endereco endereco;
-
     public Medico(DadosCadastroMedico dadosCadastroMedico){
         this.nome = dadosCadastroMedico.nome();
         this.email = dadosCadastroMedico.email();
         this.telefone = dadosCadastroMedico.telefone();
         this.crm = dadosCadastroMedico.crm();
         this.especialidade = dadosCadastroMedico.especialidade();
-        this.endereco = new Endereco(dadosCadastroMedico.dadosEndereco());
+    }
+
+    public Medico(@Valid DadosAtualizacaoMedico json) {
     }
 
     public Long getId() {
@@ -64,5 +62,16 @@ public class Medico {
 
     public Especialidade getEspecialidade() {
         return especialidade;
+    }
+
+
+    public void atualizarInformacoes(@Valid DadosAtualizacaoMedico json) {
+        if (json.nome()!=null) {
+            this.nome = json.nome();
+        }
+        if (json.telefone()!=null) {
+            this.telefone = json.telefone();
+        }
+
     }
 }

@@ -1,6 +1,6 @@
 package com.api.cadastro_medicos.pacientes;
 
-import com.api.cadastro_medicos.endereco.Endereco;
+import com.api.cadastro_medicos.medico.DadosAtualizacaoMedico;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -53,5 +53,11 @@ import lombok.NoArgsConstructor;
         }
 
         public Paciente() {
+        }
+
+        public void atualizarInformacoes(@Valid DadosAtualizacaoPaciente json) {
+            if (json.telefone()!=null) {
+                this.telefone = json.telefone();
+            }
         }
     }

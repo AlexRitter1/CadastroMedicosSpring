@@ -1,4 +1,4 @@
-package com.api.cadastro_medicos.medico;
+package com.api.cadastro_medicos.domain.medico;
 
 public enum Especialidade {
 

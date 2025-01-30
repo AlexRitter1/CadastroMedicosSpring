@@ -1,4 +1,4 @@
-package com.api.cadastro_medicos.pacientes;
+package com.api.cadastro_medicos.domain.pacientes;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

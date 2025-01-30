@@ -1,6 +1,5 @@
-package com.api.cadastro_medicos.pacientes;
+package com.api.cadastro_medicos.domain.pacientes;
 
-import com.api.cadastro_medicos.medico.DadosAtualizacaoMedico;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;

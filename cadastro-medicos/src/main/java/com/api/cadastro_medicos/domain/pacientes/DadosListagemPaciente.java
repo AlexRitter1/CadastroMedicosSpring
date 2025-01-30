@@ -1,6 +1,4 @@
-package com.api.cadastro_medicos.pacientes;
-
-import com.api.cadastro_medicos.medico.Medico;
+package com.api.cadastro_medicos.domain.pacientes;
 
 public record DadosListagemPaciente(Long id, String nome, String email, String telefone) {
 
